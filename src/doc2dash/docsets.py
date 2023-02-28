@@ -74,13 +74,7 @@ def prepare_docset(
     if icon:
         shutil.copy2(icon, dest / "icon.png")
 
-    # black test
-    return DocSet(
-        path=dest,
-          plist=plist_path, db_conn=db_conn
-      )
-
-
+    return DocSet(path=dest, plist=plist_path, db_conn=db_conn)
 
 
 def read_plist(full_path: Path) -> dict[str, str | bool]:
