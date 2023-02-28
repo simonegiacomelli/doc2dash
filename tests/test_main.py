@@ -116,6 +116,7 @@ class TestArguments:
         """
         Fail if icon is not PNG.
         """
+        assert "this test will fail" == " on purpose"
         p = tmp_path / "sub" / "bar.png"
         p.parent.mkdir()
         p.write_text("GIF89afoobarbaz")
