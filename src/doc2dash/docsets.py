@@ -78,8 +78,14 @@ def prepare_docset(
 
 
 def read_plist(full_path: Path) -> dict[str, str | bool]:
+    if full_path.is_file():
+        print(f'{full_path} is a file')
+    else:
+        print(f'{full_path} is not a file')
     with full_path.open("rb") as fp:
         return plistlib.load(fp)  # type: ignore[no-any-return]
+
+
 
 
 def write_plist(plist: dict[str, str | bool], full_path: Path) -> None:
